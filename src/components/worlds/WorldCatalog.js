@@ -5,6 +5,14 @@ import { useHistory, Link } from "react-router-dom/cjs/react-router-dom.min";
 export const WorldCatalog = () => {
     const [worlds, setWorlds] = useState([])
 
+    useEffect(
+        () => {
+            getAllWorlds()
+                .then(setWorlds)
+        },
+        []
+    )
+
     //map through all worlds and display them as cards with just name and description
     return (
         <>
