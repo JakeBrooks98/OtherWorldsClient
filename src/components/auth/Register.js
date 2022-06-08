@@ -7,14 +7,20 @@ import './Auth.css'
 export const Register = () => {
   const username = useRef()
   const password = useRef()
+  const firstname = useRef()
+  const lastname = useRef()
+  const email = useRef()
   const history = useHistory()
 
   const handleRegister = (e) => {
     e.preventDefault()
 
     const newUser = {
+      "first_name": firstname.current.value,
+      "last_name": lastname.current.value,
       "username": username.current.value,
-      "password": password.current.value
+      "password": password.current.value,
+      "email": email.current.value
     }
 
     registerUser(newUser).then(res => {
@@ -28,7 +34,19 @@ export const Register = () => {
 return (
   <main>
     <form onSubmit={handleRegister}>
-      <h3>Register an account</h3>
+      <h3>Register A New Other Worlds Account</h3>
+      <fieldset>
+          <label htmlFor="name"> First Name </label>
+          <input ref={firstname}
+                  type="text" className="form-control"
+                  placeholder="Enter your first name" required autoFocus />
+      </fieldset>
+      <fieldset>
+          <label htmlFor="name"> Last Name </label>
+          <input ref={lastname}
+                  type="text" className="form-control"
+                  placeholder="Enter your last name" required autoFocus />
+      </fieldset>
       <fieldset>
         <label htmlFor="inputUsername">Username</label>
         <input ref={username} type="text" name="username" placeholder="Username" required />
@@ -36,6 +54,10 @@ return (
       <fieldset>
         <label htmlFor="inputPassword"> Password </label>
         <input ref={password} type="password" name="password" placeholder="Password" required />
+      </fieldset>
+      <fieldset>
+          <label htmlFor="email"> Email Address </label>
+          <input ref={email} type="email" className="form-control" placeholder="Email address" required />
       </fieldset>
       <fieldset>
         <button type="submit">Register</button>
