@@ -32,3 +32,16 @@ export const deleteWorld = () => {
 export const editWorld = () => {
 
 }
+
+//create a new world
+export const createWorld = (world) => {
+    return fetch(`http://localhost:8000/worlds`, {
+        method: "POST",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+     },
+     body: JSON.stringify(world)
+    })
+    .then(getAllWorlds)
+}

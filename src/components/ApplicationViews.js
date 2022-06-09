@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import { HomePage } from "./HomePage"
 import { WorldCatalog } from "./worlds/WorldCatalog"
 import { WorldDetail } from "./worlds/WorldDetail"
+import { WorldForm } from "./worlds/WorldForm"
 
 export const ApplicationViews = () => {
     return <>
@@ -14,6 +15,9 @@ export const ApplicationViews = () => {
         </Route>
         <Route exact path="/worlds/:worldId(\d+)">
             <WorldDetail />
+        </Route>
+        <Route exact path="/worldform">
+            <WorldForm />
         </Route>
     </>
 }

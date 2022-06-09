@@ -4,8 +4,9 @@ import { useHistory, useParams, Link } from "react-router-dom/cjs/react-router-d
 import { getSingleWorld } from "./WorldManager";
 
 export const WorldDetail = () => {
-    const [world, setWorld] = useState([])
+    const [world, setWorld] = useState({})
     const { worldId } = useParams()
+    const currentUser = parseInt(localStorage.getItem("auth_token"))
 
     useEffect(
         () => {
@@ -25,8 +26,9 @@ export const WorldDetail = () => {
             <div className="world-description">
                 {`${world.description}`}
             </div>
+                <h2>Timeline</h2>
             <div className="timeline">
-                {world.events.map(
+                {world.events?.map(
                     (event) => {
                         return (
                             <div className="timeline-event">
@@ -38,16 +40,28 @@ export const WorldDetail = () => {
                     }
                 )}
             </div>
+            <div className="create-event">
+            {currentUser ? <button>Add Timeline event</button> : ""}
+            </div>
+                <h2>Regions</h2>
             <div className="world-regions">
-                {world.regions.map(
+                {world.regions?.map(
                     (region) => {
+                        return(
                         <div className="region-details">
                             <h3>{`${region.name}`}</h3>
+                            <p>Biome: {`${region.biome.label}`}</p>
                             <p>{`${region.description}`}</p>
                         </div>
+                        )
                     }
                 )}
             </div>
+            <div className="create_regions"></div>
+                {currentUser ? <button>Add Region</button> : ""}
+            </div>
+            <div className="edit_delete_buttons">
+                {currentUser ? <><button>Edit World</button> <button>Delete World</button></> : ""}
             </div>
         </section>
         </>

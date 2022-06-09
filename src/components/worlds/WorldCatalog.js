@@ -19,7 +19,7 @@ export const WorldCatalog = () => {
         <>
         <section>
             <h1>Explore Our Worlds</h1>
-            <div>
+            <div className="catalog">
                 {worlds.map(
                     (world) => {
                         return <div className="world-card">
