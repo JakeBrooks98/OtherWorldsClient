@@ -1,12 +1,21 @@
 //get all worlds
 export const getAllWorlds = () => {
-    fetch(`http://localhost:8000/worlds`)
-    .then(res => res.json())
+    return fetch("http://localhost:8000/worlds", {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(response => response.json())
 }
 
 //get a world by its id
-export const getSingleWorld = () => {
-
+export const getSingleWorld = (world) => {
+    return fetch(`http://localhost:8000/worlds/${world}`, {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(response => response.json())
 }
 
 //get posts by user id
