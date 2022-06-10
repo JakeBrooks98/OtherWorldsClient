@@ -58,7 +58,15 @@ export const WorldDetail = () => {
                         return(
                         <div className="region-details">
                             <h3>{`${region.name}`}</h3>
-                            <p>Biome: {`${region.biome.label}`}</p>
+                            <div>Biomes: </div><ul>
+                                {region.biome?.map(
+                                (biome) => {
+                                    return(
+                                        <li>{`${biome.label}`}</li>
+                                    )
+                                }
+                            )}
+                                </ul>
                             <p>{`${region.description}`}</p>
                         </div>
                         )
@@ -66,7 +74,11 @@ export const WorldDetail = () => {
                 )}
             </div>
             <div className="create_regions"></div>
-                {world.is_user ? <button>Add Region</button> : ""}
+                {world.is_user ? <button onClick={
+                () => {
+                    history.push(`/worlds/${parseInt(worldId)}/addregion`)
+                }
+            }>Add Region</button> : ""}
             </div>
             <div className="edit_delete_buttons">
                 {world.is_user ? <><button >Edit World</button> 

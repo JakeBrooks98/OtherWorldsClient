@@ -113,15 +113,30 @@ a:active {
     flex-wrap: wrap;
 }
 
+.catalog:hover .world-card {
+  transform: translateX(-25%);
+}
+
+.world-card:hover ~ .world-card {
+  transform: translateX(25%);
+}
+
 .world-card{
   height: 375px;
   width:300px;
   border: 2px solid rgb(10, 59, 47);
-    border-radius: .25rem;
-    padding: 1rem;
-    margin: 1rem;
-    box-shadow: 10px 10px 6px 1px #5d5d5d;
-    transition: box-shadow 0.25s ease;
+  border-radius: .25rem;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 10px 10px 6px 1px #5d5d5d;
+  flex: 0 0 19.7%;
+  text-align: center;
+  margin: 0 10px;
+  transition: transform 300ms ease 100ms;
+}
+
+.world-card:hover {
+  transform: scale(1.5) !important;
 }
 
 .timeline-event{
@@ -153,8 +168,8 @@ a:active {
 }
 
 .region-details{
-    height: 250px;
-    width:200px;
+    height: 300px;
+    width:250px;
     border: 2px solid rgb(10, 59, 47);
     border-radius: .25rem;
     padding: 1rem;
@@ -179,4 +194,10 @@ a:active {
   width: 500px;
   background-color: white;
   
+}
+
+.biomes_checkboxes{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

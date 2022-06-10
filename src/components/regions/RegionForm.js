@@ -7,6 +7,7 @@ export const RegionForm = () => {
     const history = useHistory()
     const { worldId } = useParams()
     const [biomes, setBiomes] = useState([])
+    const [form, updateForm] = useState({ label: "" })
 
     /*
         Since the input fields are bound to the values of
@@ -31,6 +32,27 @@ export const RegionForm = () => {
         []
     )
 
+    const handleControlledInputChange = (event) => {
+        /*
+            When changing a state object or array, always create a new one
+            and change state instead of modifying current one
+        */
+        const newRegion = Object.assign({}, form)
+        if (event.target.name === "biomes") {
+            if (!(event.target.name in newRegion)) {
+                newRegion[event.target.name] = []
+            }
+            let val = parseInt(event.target.id)
+            if (event.target.checked) {
+                newRegion[event.target.name].push(biomes.find(biome => biome.id === val))
+            } else {
+                newRegion[event.target.name] = newRegion[event.target.name].filter(biome => biome.id !== val)
+            }
+        } else {
+            newRegion[event.target.name] = event.target.value
+        }
+        updateForm(newRegion)
+    }
 
     const changeRegionState = (event) => {
         const newRegion = Object.assign({}, currentRegion)
@@ -63,34 +85,51 @@ export const RegionForm = () => {
                         onChange={changeRegionState} />
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="biome">Biome:</label>
-                    <select defaultValue={"0"} name="biome"
-                        onChange={changeRegionState} >
-                        <option value="0">Select a biome that describes your region...</option>
-                        {biomes.map(biome => {
-                            return <option value={biome.id}>
-                                {biome.label}
-                            </option>
-
-                        })}</select>
-
-
+            <div className="biomes_checkboxes">
+            {biomes.map(biome => {
+                // logic to determine whether box should be pre-checked
+                let checked_status = false
+                if ("biomes" in form) {
+                    if (form.biomes.length > 0) {
+                        let found_biome = form.biomes.find(b => b.id === biome.id)
+                        if (found_biome) {
+                            checked_status = true
+                        } else {
+                            checked_status = false
+                        }
+                    } else {
+                        checked_status = false
+                    }
+                }
+                return <div key={`formBiomes-${biome.id}`} className="checkbox">
+                    <input name="biomes"
+                        type="checkbox"
+                        htmlFor="biome"
+                        id={biome.id}
+                        onChange={handleControlledInputChange}
+                        checked={checked_status}
+                    />
+                    <label htmlFor={biome.id}>{biome.label}</label>
                 </div>
-            </fieldset>
+            })
+            }
+            </div>
             
 
             <button type="submit"
                 onClick={evt => {
                     // Prevent form from being submitted
                     evt.preventDefault()
+                    let biomesToAdd = []
+                    if(form.biomes && form.biomes.length > 0) {
+                        biomesToAdd = form.biomes.map(biome => biome.id)
+                    }
 
                     const region = {
                         name: currentRegion.name,
                         description: currentRegion.description,
-                        biome: currentRegion.biome,
-                        world: worldId
+                        biome: biomesToAdd,
+                        world: parseInt(worldId)
                     }
 
                     // Send POST request to your API
