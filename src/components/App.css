@@ -162,3 +162,21 @@ a:active {
     box-shadow: 10px 10px 6px 1px #5d5d5d;
     transition: box-shadow 0.25s ease;
 }
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(128, 128, 128, 0.435);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 500px;
+  background-color: white;
+  
+}

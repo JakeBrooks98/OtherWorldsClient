@@ -1,5 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { EventForm } from "./events/EventForm"
 import { HomePage } from "./HomePage"
 import { WorldCatalog } from "./worlds/WorldCatalog"
 import { WorldDetail } from "./worlds/WorldDetail"
@@ -18,6 +19,9 @@ export const ApplicationViews = () => {
         </Route>
         <Route exact path="/worldform">
             <WorldForm />
+        </Route>
+        <Route exact path="/worlds/:worldId(\d+)/addevent">
+            <EventForm />
         </Route>
     </>
 }

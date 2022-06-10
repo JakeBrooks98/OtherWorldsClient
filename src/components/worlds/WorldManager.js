@@ -24,13 +24,28 @@ export const getUserWorlds = () => {
 }
 
 //delete a world
-export const deleteWorld = () => {
-
+export const deleteWorld = (worldId) => {
+    return fetch(`http://localhost:8000/worlds/${worldId}`, {
+        method: "DELETE",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+     }
+    })
+    .then(getAllWorlds)
 }
 
 //update a world
-export const editWorld = () => {
-
+export const editWorld = (world, updatedWorld) => {
+    return fetch(`http://localhost:8000/worlds/${world}`, {
+        method: "PUT",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+     },
+     body: JSON.stringify(updatedWorld)
+    })
+    .then(getAllWorlds)
 }
 
 //create a new world

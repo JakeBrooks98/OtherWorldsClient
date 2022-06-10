@@ -2,11 +2,14 @@
 import React, { useEffect, useState } from "react"
 import { useHistory, useParams, Link } from "react-router-dom/cjs/react-router-dom.min";
 import { getSingleWorld } from "./WorldManager";
+import { Modal } from "../modal/Modal";
 
 export const WorldDetail = () => {
     const [world, setWorld] = useState({})
     const { worldId } = useParams()
-    const currentUser = parseInt(localStorage.getItem("auth_token"))
+    const [modalStatus, setModalStatus] = useState(false)
+    const [worldToDelete, setWorldToDelete] = useState()
+    const history = useHistory()
 
     useEffect(
         () => {
@@ -19,6 +22,7 @@ export const WorldDetail = () => {
     //render the world details
     return (
         <>
+        {modalStatus ? <Modal worldId = {worldToDelete} history={history} setModalStatus = {setModalStatus} /> : null }
         <section className="detail-page">
             <div>
             <h1 className="world-name">{`${world.name}`}</h1>
@@ -41,7 +45,11 @@ export const WorldDetail = () => {
                 )}
             </div>
             <div className="create-event">
-            {currentUser ? <button>Add Timeline event</button> : ""}
+            {world.is_user ? <button onClick={
+                () => {
+                    history.push(`/worlds/${worldId}/addevent`)
+                }
+            }>Add Timeline event</button> : ""}
             </div>
                 <h2>Regions</h2>
             <div className="world-regions">
@@ -58,10 +66,16 @@ export const WorldDetail = () => {
                 )}
             </div>
             <div className="create_regions"></div>
-                {currentUser ? <button>Add Region</button> : ""}
+                {world.is_user ? <button>Add Region</button> : ""}
             </div>
             <div className="edit_delete_buttons">
-                {currentUser ? <><button>Edit World</button> <button>Delete World</button></> : ""}
+                {world.is_user ? <><button >Edit World</button> 
+                                    <button id="deleteWorld" name={worldId} onClick={
+                                            (evt) => {
+                                                setWorldToDelete(evt.target.name)
+                                                setModalStatus(true)
+                                            }
+                                        }>Delete World</button></> : ""}
             </div>
         </section>
         </>
