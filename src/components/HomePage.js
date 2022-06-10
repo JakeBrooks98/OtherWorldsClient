@@ -10,7 +10,15 @@ export const HomePage = () => {
             </div>
             <div className="whats-new">
                 <h3>What's New?</h3>
-                <div></div>
+                <div className="whats_new_card">
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+
+                </div>
             </div>
         </section>
     )

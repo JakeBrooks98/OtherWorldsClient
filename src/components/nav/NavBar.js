@@ -5,9 +5,11 @@ import "./NavBar.css"
 export const NavBar = () => {
   const history = useHistory()
   return (
-    <nav>
+    <nav className="navbar">
       <Link to="/">Home</Link>
       <Link to="/worldcatalog">World Catalog</Link>
+      <Link to="/worldform">Create A World</Link>
+      <Link to="/myworlds">My Worlds</Link>
       {
         localStorage.getItem("auth_token") !== null ?
           <button onClick={() => {
