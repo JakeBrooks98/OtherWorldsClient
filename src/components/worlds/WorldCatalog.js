@@ -3,8 +3,11 @@ import React, { useEffect, useState } from "react"
 import { useHistory, Link } from "react-router-dom/cjs/react-router-dom.min";
 import { getAllWorlds } from "./WorldManager";
 
+
 export const WorldCatalog = () => {
     const [worlds, setWorlds] = useState([])
+    const [startPoint, setStart] =useState(0)
+    const history = useHistory()
 
     useEffect(
         () => {
@@ -22,13 +25,30 @@ export const WorldCatalog = () => {
             <div className="catalog">
                 {worlds.map(
                     (world) => {
-                        return <div className="world-card">
+                        if(!(world.id > (startPoint+3)) && !(world.id < startPoint)){
+                        return <div className="world-card" key={world.id} onClick={
+                            () => {
+                                history.push(`/worlds/${world.id}`)
+                            }
+                        }>
                             <Link to={`/worlds/${world.id}`}><h3>{`${world.name}`}</h3></Link>
                             <p>{`${world.description}`}</p>
                             </div>
+
+                        }else{
+                            return null
+                        }
                     }
                 )}
             </div>
+                <button onClick={
+                    () => {
+                        setStart(startPoint+1)
+                        if(startPoint > worlds.length){
+                            setStart(0)
+                        }
+                    }
+                }>Next</button>
         </section>
         </>
     )

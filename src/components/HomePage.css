@@ -1,0 +1,74 @@
+.whats_new_card {
+    margin-top: 40px;
+    height: 25%;
+    position: relative;
+    height: 200px;
+    width:95%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    margin-bottom: 30px;
+  }
+  
+  .background {
+    display: flex;
+    height: 100%;
+  }
+  
+  .left {
+    background: black;
+    width: 30%;
+    position: relative;
+  }
+  
+  .left:before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(to right,#000,transparent);
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 275px;
+  }
+  
+  .content-container {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    display:flex;
+    flex-direction: row;
+    background-image: url("https://static.wikia.nocookie.net/powerlisting/images/c/c6/Fantasy_World.jpeg");
+    background-repeat: no-repeat;
+  background-size: 100% 100%
+  }
+
+.new_world_img{
+    align-content: right;
+}
+.words{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    overflow: hidden
+}
+
+.description{
+    overflow-wrap: break-word;
+    inline-size: 200px;
+    background-color: transparent;
+}
+
+.words > p{
+    background-color: transparent;
+}
+
+.words.p{
+    background-color: transparent;
+}
+
+.words.b{
+    background-color: transparent;
+}

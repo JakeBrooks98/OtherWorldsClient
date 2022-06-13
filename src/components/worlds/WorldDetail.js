@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useHistory, useParams, Link } from "react-router-dom/cjs/react-router-dom.min";
 import { getSingleWorld } from "./WorldManager";
 import { Modal } from "../modal/Modal";
+import { Timeline } from "../Timeline/Timeline";
 
 export const WorldDetail = () => {
     const [world, setWorld] = useState({})
@@ -31,19 +32,7 @@ export const WorldDetail = () => {
                 {`${world.description}`}
             </div>
                 <h2>Timeline</h2>
-            <div className="timeline">
-                {world.events?.map(
-                    (event) => {
-                        return (
-                            <div className="timeline-event">
-                            <h3>{`${event.name}`}</h3>
-                            <p>{`${event.date} ${event.date_suffix}`}</p>
-                            <p>{`${event.description}`}</p>
-                            </div>
-                        )
-                    }
-                )}
-            </div>
+                {Timeline(world)}
             <div className="create-event">
             {world.is_user ? <button onClick={
                 () => {
@@ -51,6 +40,7 @@ export const WorldDetail = () => {
                 }
             }>Add Timeline event</button> : ""}
             </div>
+
                 <h2>Regions</h2>
             <div className="world-regions">
                 {world.regions?.map(

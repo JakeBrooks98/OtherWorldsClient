@@ -139,23 +139,6 @@ a:active {
   transform: scale(1.5) !important;
 }
 
-.timeline-event{
-    height: 250px;
-    width:200px;
-    border: 2px solid rgb(10, 59, 47);
-      border-radius: .25rem;
-      padding: 1rem;
-      margin: 1rem;
-      box-shadow: 10px 10px 6px 1px #5d5d5d;
-      transition: box-shadow 0.25s ease;
-  }
-
-.timeline{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 .card-section{
   display:flex;
   flex-wrap: wrap;
