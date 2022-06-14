@@ -1,3 +1,5 @@
+import { getSingleWorld } from "../worlds/WorldManager"
+
 //create a region
 export const createRegion = (region) => {
     return fetch(`http://localhost:8000/regions`, {
@@ -18,4 +20,15 @@ export const getBiomes = () => {
         }
     })
         .then(response => response.json())
+}
+
+export const deleteRegion = (regionId, worldId) => {
+    return fetch(`http://localhost:8000/regions/${regionId}`, {
+        method: "DELETE",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+     }
+    })
+    .then(getSingleWorld(worldId))
 }

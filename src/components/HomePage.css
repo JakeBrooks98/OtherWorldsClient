@@ -1,0 +1,79 @@
+.whats_new_card {
+    margin-top: 40px;
+    height: 300px;
+    position: relative;
+    height: 235px;
+    width:95%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    margin-bottom: 30px;
+  }
+
+  .whats_new_card:hover {
+    transform: scale(1.05) !important;
+  }
+  
+  .background {
+    display: flex;
+    height: 100%;
+    background-image: url("https://mmos.com/wp-content/uploads/2021/05/a3-still-alive-blue-moon-forest-banner.jpg");
+    background-size: 100% 100%
+  }
+  
+  .left {
+    background: black;
+    width: 30%;
+    position: relative;
+  }
+  
+  .content-container {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display:flex;
+    flex-direction: row;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right,#000,transparent);
+  
+  }
+
+.card-img{
+    align-content: right;
+    z-index: -1;
+}
+.words{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    overflow: hidden;
+    margin-top: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.description{
+    overflow-wrap: break-word;
+    inline-size: 200px;
+    background-color: transparent;
+    margin-top: 0%;
+}
+
+.words > p{
+    background-color: transparent;
+}
+
+.words.p{
+    background-color: transparent;
+}
+
+.words.b{
+    background-color: transparent;
+}
+
+.new-title{
+  font-size: large;
+  font-weight: bold;
+}

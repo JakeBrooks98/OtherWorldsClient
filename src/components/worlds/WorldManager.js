@@ -19,8 +19,13 @@ export const getSingleWorld = (world) => {
 }
 
 //get posts by user id
-export const getUserWorlds = () => {
-
+export const getMyWorlds = () => {
+    return fetch("http://localhost:8000/worlds/myworlds", {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(response => response.json())
 }
 
 //delete a world
@@ -36,16 +41,16 @@ export const deleteWorld = (worldId) => {
 }
 
 //update a world
-export const editWorld = (world, updatedWorld) => {
-    return fetch(`http://localhost:8000/worlds/${world}`, {
+export const editWorld = (worldId, updatedWorld) => {
+    return fetch(`http://localhost:8000/worlds/${worldId}`, {
         method: "PUT",
         headers:{
             "Content-Type": "application/json",
-            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
      },
      body: JSON.stringify(updatedWorld)
     })
-    .then(getAllWorlds)
+    .then(getSingleWorld(worldId))
 }
 
 //create a new world
@@ -59,4 +64,14 @@ export const createWorld = (world) => {
      body: JSON.stringify(world)
     })
     .then(getAllWorlds)
+}
+
+//get newest world for the homepage
+export const getNewestWorld = () => {
+    return fetch(`http://localhost:8000/worlds/whatsnew`, {
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
+        }
+    })
+        .then(response => response.json())
 }

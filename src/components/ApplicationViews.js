@@ -3,6 +3,8 @@ import { Route } from "react-router-dom"
 import { EventForm } from "./events/EventForm"
 import { HomePage } from "./HomePage"
 import { RegionForm } from "./regions/RegionForm"
+import { EditWorld } from "./worlds/EditWorld"
+import { MyWorlds } from "./worlds/MyWorlds"
 import { WorldCatalog } from "./worlds/WorldCatalog"
 import { WorldDetail } from "./worlds/WorldDetail"
 import { WorldForm } from "./worlds/WorldForm"
@@ -26,6 +28,9 @@ export const ApplicationViews = () => {
         </Route>
         <Route exact path="/worlds/:worldId(\d+)/addregion">
             <RegionForm />
+        </Route>
+        <Route exact path="/myworlds">
+            <MyWorlds />
         </Route>
     </>
 }

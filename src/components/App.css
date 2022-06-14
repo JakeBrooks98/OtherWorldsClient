@@ -13,10 +13,10 @@ textarea {
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   font-family:"Patua One", serif;
   letter-spacing: 2px;
-  background-color: #197b98;
+  background-color: #2F4858;
   text-align: center;
   -webkit-text-stroke-width: .5px;
             -webkit-text-stroke-color: white;
@@ -28,7 +28,7 @@ p {
 
 *{
   font-family: "Roboto Condensed","Roboto","Helvetica","sans-serif";
-  background-color: rgb(157, 244, 244);
+  background-color: #86BBD8;
   padding-left: 5px;
   padding-right: 5px;
   font-size: large;
@@ -40,7 +40,7 @@ button{
   font-size: 12px!important;
   text-transform: uppercase!important;
   padding:.9em;
-  background: #197b98;
+  background: #33658A;
   color: white;
   border-radius: 8px!important;
   margin: .5em;
@@ -52,34 +52,27 @@ button:hover {
   text-transform: uppercase;
   font-size: 12px;
   padding: .9em;
-  background-color: #197b98(26, 25, 25);
+  background-color: #33658A(26, 25, 25);
   color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
   transition: 0.5s;
   border-radius: 8px;
 }
-/*randomizer button css*/
-.randomButton{
-  display: flex;
-  align-items: center;
-}
 
-.randomizer{
-  padding-top: 1em;
-  align-content: center;
-
+.delete_button{
+  background-color: rgb(160, 21, 21);
 }
 
 
 /* unvisited link */
 a:link {
-  color: rgb(3, 66, 87);
+  color: #33658A(3, 66, 87);
   text-decoration: none;
 }
 
 /* visited link */
 a:visited {
-  color: #197b98;
+  color: #33658A;
   text-decoration: none;
 }
 
@@ -91,7 +84,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: #197b98;
+  color: #33658A;
   text-decoration: none;
 }
 
@@ -111,6 +104,14 @@ a:active {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-left: 35px;
+}
+
+.catalog.catalog-btn{
+  align-content: center;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  float: right;
 }
 
 .catalog:hover .world-card {
@@ -136,24 +137,7 @@ a:active {
 }
 
 .world-card:hover {
-  transform: scale(1.5) !important;
-}
-
-.timeline-event{
-    height: 250px;
-    width:200px;
-    border: 2px solid rgb(10, 59, 47);
-      border-radius: .25rem;
-      padding: 1rem;
-      margin: 1rem;
-      box-shadow: 10px 10px 6px 1px #5d5d5d;
-      transition: box-shadow 0.25s ease;
-  }
-
-.timeline{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  transform: scale(1.2) !important;
 }
 
 .card-section{
@@ -178,6 +162,11 @@ a:active {
     transition: box-shadow 0.25s ease;
 }
 
+.region_with_delete{
+  flex-direction: column;
+  align-content: center;
+}
+
 .modal {
   position: fixed;
   left: 0;
@@ -200,4 +189,16 @@ a:active {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.catalog-btn{
+  opacity: .5;
+  background-color: #404040;
+  height: 50px;
+  width: 25px
+}
+
+.catalog_content{
+  flex-wrap: wrap;
+  flex-direction: row;
 }
