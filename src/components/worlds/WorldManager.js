@@ -41,16 +41,16 @@ export const deleteWorld = (worldId) => {
 }
 
 //update a world
-export const editWorld = (world, updatedWorld) => {
-    return fetch(`http://localhost:8000/worlds/${world}`, {
+export const editWorld = (worldId, updatedWorld) => {
+    return fetch(`http://localhost:8000/worlds/${worldId}`, {
         method: "PUT",
         headers:{
             "Content-Type": "application/json",
-            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+            "Authorization": `Token ${localStorage.getItem("auth_token")}`
      },
      body: JSON.stringify(updatedWorld)
     })
-    .then(getAllWorlds)
+    .then(getSingleWorld(worldId))
 }
 
 //create a new world

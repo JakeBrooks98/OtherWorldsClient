@@ -20,12 +20,12 @@ export const WorldCatalog = () => {
     //map through all worlds and display them as cards with just name and description
     return (
         <>
-        <section>
             <h1>Explore Our Worlds</h1>
+        <section className="catalog_content">
             <div className="catalog">
                 {worlds.map(
                     (world) => {
-                        if(!(world.id > (startPoint+3)) && !(world.id < startPoint)){
+                        if(!(world.id > (startPoint+4)) && !(world.id < startPoint)){
                         return <div className="world-card" key={world.id} onClick={
                             () => {
                                 history.push(`/worlds/${world.id}`)
@@ -40,15 +40,15 @@ export const WorldCatalog = () => {
                         }
                     }
                 )}
-            </div>
-                <button onClick={
+                <button className="catalog-btn"  onClick={
                     () => {
-                        setStart(startPoint+1)
+                        setStart(startPoint+2)
                         if(startPoint > worlds.length){
                             setStart(0)
                         }
                     }
-                }>Next</button>
+                }>></button>
+            </div>
         </section>
         </>
     )

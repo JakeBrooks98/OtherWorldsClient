@@ -1,9 +1,11 @@
 import { getNewestWorld } from "./worlds/WorldManager"
 import { useState, useEffect } from "react"
 import "./HomePage.css"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 export const HomePage = () => {
     const [world, setWorld] = useState({})
+    const history = useHistory()
 
     useEffect(
         () => {
@@ -28,19 +30,22 @@ export const HomePage = () => {
             </div>
             <div className="whats-new">
                 <h3>What's New?</h3>
-                <div class="whats_new_card">
+                <div class="whats_new_card" onClick={
+                            () => {
+                                history.push(`/worlds/${world.id}`)
+                            }
+                        }>
                 <div class="background">
                 <div class="left"></div>
-                <div class="right">
-                
+                <div class="right"></div>
                 </div>
-                </div>
-                <div class="content-container">
+                <div class="content-container" >
                     
                         <div className="words">
                         <p className="new-title">{world.name}</p>
                         <p className='description'>{world.description}</p>
                         </div>
+                        <img className="card-img" src="https://mmos.com/wp-content/uploads/2021/05/a3-still-alive-blue-moon-forest-banner.jpg"></img>
                     
                 </div>
             </div>
