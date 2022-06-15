@@ -7,6 +7,8 @@
     border: 2px solid rgb(0, 0, 0);
     border-radius: .4rem;
     margin-bottom: 30px;
+    background-image: url("https://mmos.com/wp-content/uploads/2021/05/a3-still-alive-blue-moon-forest-banner.jpg");
+    background-size: 100% 100%
   }
 
   .whats_new_card:hover {
@@ -36,9 +38,11 @@
     display:flex;
     flex-direction: row;
     background-repeat: no-repeat;
-    background-image: linear-gradient(to right,#000,transparent);
+    background-image: linear-gradient(to right,#000,transparent), url("https://mmos.com/wp-content/uploads/2021/05/a3-still-alive-blue-moon-forest-banner.jpg");
+    background-size: 100% 100%
   
   }
+
 
 .card-img{
     align-content: right;

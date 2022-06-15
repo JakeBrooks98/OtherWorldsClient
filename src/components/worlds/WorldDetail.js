@@ -76,7 +76,8 @@ export const WorldDetail = () => {
                                 </div>
                                 {editable ? <button className="delete_button" onClick={
                                     () => {
-                                        deleteRegion(region.id, worldId)
+                                        deleteRegion(region.id)
+                                        getSingleWorld(worldId)
                                     }
                                 }>Delete</button>: ""}
 

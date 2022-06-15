@@ -2,6 +2,7 @@ import { getNewestWorld } from "./worlds/WorldManager"
 import { useState, useEffect } from "react"
 import "./HomePage.css"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import { Link } from "react-router-dom"
 
 export const HomePage = () => {
     const [world, setWorld] = useState({})
@@ -24,7 +25,7 @@ export const HomePage = () => {
                     Enrich your worlds with varied and vibrant character by adding regions and history!</p>
                 <br/>
                 <p>    Whether it be for novels, video games, movies, tv, tabletop etc. Other Worlds is perfect for creating and managing your own custom setting.
-                Immerse yourself in the rich fantastical realms created by our other users or create your own today!
+                Immerse yourself in the rich fantastical realms created by our other users or <Link to="/worldform">create your own today</Link>!
                 </p>
             </div>
             </div>

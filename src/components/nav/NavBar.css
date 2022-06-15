@@ -2,9 +2,62 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    background-color: #242527;
+    color: white;
+}
+/*navbar toggler*/
+.navbar-toggler{
+    border:solid white;
+}
+
+.navbar-toggler-icon{
+    color:white;
+}
+
+.collapse.navbar-collapse{
+    background-color: #5d5d5d!important;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+    background-color: #5d5d5d!important;
+}
+
+.nav-item{
+    background-color: #5d5d5d!important;
+}
+
+.nav-link{
+    background-color: #5d5d5d!important;
+    color: white!important;
+    text-decoration: underline!important;
+}
+
+.nav-link:hover{
+    background-color: #5d5d5d!important;
+    color: #86BBD8!important;
+    text-decoration: underline!important;
+}
+
+.navbar-nav{
+    background-color: #5d5d5d!important;
+}
+
+.OtherWorlds_brand{
+    font-size: larger;
+    background-color: #242527;
+    color: white!important;
+}
+
+.container-fluid{
+    background-color: #242527;
+}
+
+.mr-2{
+    background-color: #33658A!important;
+}
+
+.navbar-toggler-icon{
+    background-color: #33658A!important;
 }
