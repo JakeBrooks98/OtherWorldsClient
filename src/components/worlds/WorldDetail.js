@@ -42,7 +42,10 @@ export const WorldDetail = () => {
                         <div className="world-description">
                             {`${world.description}`}
                         </div>
+                        <br />
+                        <div><b>Map:</b></div>
                         {world.is_user ? <DrawMap /> : ""}
+                        {/* {world.map ? <div>{`${world.map}`}</div>: {world.is_user ? <DrawMap /> : ""}} */}
                     </div>
                     }
                 </div>

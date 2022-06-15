@@ -22,7 +22,7 @@ export const HomePage = () => {
             <h1>Welcome To Other Worlds</h1>
             <div className="welcome-message">
                 <p>Welcome to Other Worlds, the perfect tool for all your world building needs. Dive deep into the world building process as you create wondrous and spectacular new lands. 
-                    Enrich your worlds with varied and vibrant character by adding regions and history!</p>
+                    Enrich your worlds with varied and vibrant character by adding regions and history or even draw your own custom map!</p>
                 <br/>
                 <p>    Whether it be for novels, video games, movies, tv, tabletop etc. Other Worlds is perfect for creating and managing your own custom setting.
                 Immerse yourself in the rich fantastical realms created by our other users or <Link to="/worldform">create your own today</Link>!
