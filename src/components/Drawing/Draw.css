@@ -1,0 +1,15 @@
+
+
+  
+  .drawing-area {
+    width: 695px;
+    height: 600px;
+    background-color: lightgrey;
+    border: 2px solid #33658A;
+    margin: -8% 23%;
+  }
+
+  canvas{
+    border: 2px solid black!important;
+    background-color: tan;
+  }

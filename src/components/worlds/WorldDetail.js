@@ -6,6 +6,7 @@ import { Modal } from "../modal/Modal";
 import { Timeline } from "../Timeline/Timeline";
 import { EditWorld } from "./EditWorld";
 import { deleteRegion } from "../regions/RegionManager";
+import {DrawMap} from "../Drawing/DrawMap"
 
 export const WorldDetail = () => {
     const [world, setWorld] = useState({})
@@ -41,6 +42,7 @@ export const WorldDetail = () => {
                         <div className="world-description">
                             {`${world.description}`}
                         </div>
+                        {world.is_user ? <DrawMap /> : ""}
                     </div>
                     }
                 </div>
