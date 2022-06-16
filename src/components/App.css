@@ -102,16 +102,22 @@ a:active {
 
 .catalog{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 35px;
 }
 
-.catalog.catalog-btn{
-  align-content: center;
+.catalog-btn{
+  width: 10%;
+  background-color: #404040;
+  opacity: .5;
   padding-top: 50%;
   padding-bottom: 50%;
+  margin-left: 30px;
   float: right;
+}
+
+.catalog-btn:hover{
+  border-radius: 15px;
+  padding-top: 30%;
+  padding-bottom: 30%;
 }
 
 .catalog:hover .world-card {
@@ -122,9 +128,16 @@ a:active {
   transform: translateX(25%);
 }
 
+.scroll-btn{
+  width:10%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .world-card{
   height: 425px;
-  width:395px;
+  width: 395px;
   border: 2px solid rgb(10, 59, 47);
   border-radius: .25rem;
   padding: 1rem;
@@ -134,6 +147,7 @@ a:active {
   text-align: center;
   margin: 0 10px;
   transition: transform 300ms ease 100ms;
+  overflow: hidden;
 }
 
 .world-card:hover {
@@ -160,6 +174,8 @@ a:active {
     margin: 1rem;
     box-shadow: 10px 10px 6px 1px #5d5d5d;
     transition: box-shadow 0.25s ease;
+    overflow: hidden;
+    
 }
 
 .region_with_delete{
@@ -191,14 +207,37 @@ a:active {
   flex-wrap: wrap;
 }
 
-.catalog-btn{
-  opacity: .5;
-  background-color: #404040;
-  height: 50px;
-  width: 25px
-}
 
 .catalog_content{
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+.map{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+
+.create_regions{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-bottom: 2em;
+}
+
+.create-event{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-bottom: 2em;
+}
+
+.edit_delete_buttons{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-bottom: 2em;
 }
