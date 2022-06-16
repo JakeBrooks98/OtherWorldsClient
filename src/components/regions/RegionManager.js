@@ -22,7 +22,7 @@ export const getBiomes = () => {
         .then(response => response.json())
 }
 
-export const deleteRegion = (regionId, worldId) => {
+export const deleteRegion = (regionId) => {
     return fetch(`http://localhost:8000/regions/${regionId}`, {
         method: "DELETE",
         headers:{
@@ -30,5 +30,4 @@ export const deleteRegion = (regionId, worldId) => {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
      }
     })
-    .then(getSingleWorld(worldId))
 }

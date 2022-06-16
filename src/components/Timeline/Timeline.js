@@ -1,4 +1,5 @@
 import { deleteEvent } from "../events/EventManager"
+import { getSingleWorld } from "../worlds/WorldManager"
 import "./Timeline.css"
 
 export const Timeline = (world, editable, setEditable) => {
@@ -17,7 +18,8 @@ export const Timeline = (world, editable, setEditable) => {
                         </div>
                         </div>
                         {editable ? <button className="delete_button" onClick={() => {
-                            deleteEvent(event.id, world.id)
+                            deleteEvent(event.id)
+                            getSingleWorld(world.id)
                         }
                         }>Delete</button>: ""}
                             </>

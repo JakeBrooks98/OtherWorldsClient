@@ -1,4 +1,3 @@
-import { getSingleWorld } from "../worlds/WorldManager"
 
 //create an event
 export const createEvent = (event) => {
@@ -12,7 +11,7 @@ export const createEvent = (event) => {
     })
 }
 
-export const deleteEvent = (eventId, worldId) => {
+export const deleteEvent = (eventId) => {
     return fetch(`http://localhost:8000/events/${eventId}`, {
         method: "DELETE",
         headers:{
@@ -20,5 +19,4 @@ export const deleteEvent = (eventId, worldId) => {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
      }
     })
-    .then(getSingleWorld(worldId))
 }

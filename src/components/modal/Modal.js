@@ -1,17 +1,16 @@
 import { deleteWorld, getAllWorlds } from "../worlds/WorldManager"
 
 export const Modal = ({worldId, history, setModalStatus}) => {
-    return <div className="modal">
+    
+    return <dialog id="delete_world">
         <div className="modal-content">
             <p>Are you sure you want to destroy your world?</p>
             <button onClick={
                 () => {
                     deleteWorld(worldId)
-                        .then(() => {
-                            getAllWorlds()
-                            setModalStatus(false)
-                            history.push("/worldcatalog")
-                        })
+                    .then( () => getAllWorlds())
+                    .then(()=> setModalStatus(false) )
+                    .then(history.push("/worldcatalog"))
                 }
             }>Yes Destroy It</button>
             <button onClick={
@@ -20,5 +19,5 @@ export const Modal = ({worldId, history, setModalStatus}) => {
                 }
             }>No</button>
         </div>
-    </div>
+    </dialog>
 }

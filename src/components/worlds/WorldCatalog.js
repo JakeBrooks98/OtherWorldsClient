@@ -6,7 +6,7 @@ import { getAllWorlds } from "./WorldManager";
 
 export const WorldCatalog = () => {
     const [worlds, setWorlds] = useState([])
-    const [startPoint, setStart] =useState(0)
+    const [startPoint, setStart] = useState(0)
     const history = useHistory()
 
     useEffect(
@@ -21,35 +21,38 @@ export const WorldCatalog = () => {
     return (
         <>
             <h1>Explore Our Worlds</h1>
-        <section className="catalog_content">
-            <div className="catalog">
-                {worlds.map(
-                    (world) => {
-                        if(!(world.id > (startPoint+4)) && !(world.id < startPoint)){
-                        return <div className="world-card" key={world.id} onClick={
-                            () => {
-                                history.push(`/worlds/${world.id}`)
-                            }
-                        }>
-                            <Link to={`/worlds/${world.id}`}><h3>{`${world.name}`}</h3></Link>
-                            <p>{`${world.description}`}</p>
-                            </div>
+            <section className="catalog_content">
+                <div className="catalog">
+                    {worlds.map(
+                        (world) => {
+                            if (!(world.id > (startPoint + 4)) && !(world.id < startPoint)) {
+                                return <div className="world-card" key={world.id} onClick={
+                                    () => {
+                                        history.push(`/worlds/${world.id}`)
+                                    }
+                                }>
+                                    <Link to={`/worlds/${world.id}`}><h3>{`${world.name}`}</h3></Link>
+                                    <p>{`${world.description}`}</p>
+                                </div>
 
-                        }else{
-                            return null
+                            } else {
+                                return null
+                            }
                         }
-                    }
-                )}
-                <button className="catalog-btn"  onClick={
-                    () => {
-                        setStart(startPoint+2)
-                        if(startPoint > worlds.length){
-                            setStart(0)
-                        }
-                    }
-                }>></button>
-            </div>
-        </section>
+                    )}
+                    <div className="scroll-btn">
+                        <button className="catalog-btn" onClick={
+                            () => {
+                                setStart(startPoint + 2)
+                                if (startPoint > worlds.length) {
+                                    setStart(0)
+                                }
+                            }
+                        }>></button>
+
+                    </div>
+                </div>
+            </section>
         </>
     )
 
