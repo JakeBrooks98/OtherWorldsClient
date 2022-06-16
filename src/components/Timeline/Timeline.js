@@ -2,7 +2,7 @@ import { deleteEvent } from "../events/EventManager"
 import { getSingleWorld } from "../worlds/WorldManager"
 import "./Timeline.css"
 
-export const Timeline = (world, editable, setEditable) => {
+export const Timeline = (world, editable, setEditable, setWorld) => {
     return (
     <div className="timeline">
         <div className="outer">
@@ -20,6 +20,7 @@ export const Timeline = (world, editable, setEditable) => {
                         {editable ? <button className="delete_button" onClick={() => {
                             deleteEvent(event.id)
                             getSingleWorld(world.id)
+                            .then(setWorld)
                         }
                         }>Delete</button>: ""}
                             </>

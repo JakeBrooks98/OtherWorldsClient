@@ -8,7 +8,6 @@ export const Modal = ({worldId, history, setModalStatus}) => {
             <button onClick={
                 () => {
                     deleteWorld(worldId)
-                    .then( () => getAllWorlds())
                     .then(()=> setModalStatus(false) )
                     .then(history.push("/worldcatalog"))
                 }

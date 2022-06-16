@@ -65,7 +65,7 @@ export const WorldDetail = () => {
                         }
                     </div>
                     <h2>Timeline</h2>
-                    {Timeline(world, editable, setEditable)}
+                    {Timeline(world, editable, setEditable, setWorld)}
                     <div className="create-event">
                         {world.is_user ? <button onClick={
                             () => {
@@ -98,6 +98,7 @@ export const WorldDetail = () => {
                                                 () => {
                                                     deleteRegion(region.id)
                                                     getSingleWorld(worldId)
+                                                    .then(setWorld)
                                                 }
                                             }>Delete</button> : ""}
 
