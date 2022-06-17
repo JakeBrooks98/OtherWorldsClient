@@ -1,7 +1,9 @@
 //This module is responsible for displaying all worlds as a catalog
 import React, { useEffect, useState } from "react"
 import { useHistory, Link } from "react-router-dom/cjs/react-router-dom.min";
+import { SearchBar } from "../Search";
 import { getAllWorlds } from "./WorldManager";
+
 
 
 
@@ -11,20 +13,21 @@ export const WorldCatalog = () => {
     const history = useHistory()
 
     //search bar functionality for worlds
-    // const filterWorlds = (worlds, query) => {
-    //     if (!query) {
-    //         return worlds;
-    //     }
-    
-    //     return worlds.filter((world) => {
-    //         const worldName = world.name.toLowerCase();
-    //         return worldName.includes(query);
-    //     });
-    // };
-    // const { search } = window.location;
-    // const query = new URLSearchParams(search).get('s');
-    // const [searchQuery, setSearchQuery] = useState(query || '');
-    // const filteredWorlds = filterWorlds(worlds, searchQuery);
+    const filterWorlds = (worlds, query) => {
+        if (!query) {
+            return worlds;
+        }
+
+        return worlds.filter((world) => {
+            const worldName = world.name.toLowerCase();
+            return worldName.includes(query);
+        });
+    };
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+    const [searchQuery, setSearchQuery] = useState(query || '');
+    //create a variable
+    const filteredWorlds = filterWorlds(worlds, searchQuery);
 
 
 
@@ -41,14 +44,16 @@ export const WorldCatalog = () => {
     //map through all worlds and display them as cards with just name and description
     return (
         <>
-        {/* <SearchBar
-                searchQuery={searchQuery}
-                setSearchQuery={setSearchQuery}
-            /> */}
+            <div className="search-container">
+                <SearchBar
+                    searchQuery={searchQuery}
+                    setSearchQuery={setSearchQuery}
+                />
+            </div>
             <h1>Explore Our Worlds</h1>
             <section className="catalog_content">
                 <div className="catalog">
-                    {worlds.map(
+                    {filteredWorlds.map(
                         (world) => {
                             if (!(world.id > (startPoint + 4)) && !(world.id < startPoint)) {
                                 return <div className="world-card" key={world.id} onClick={

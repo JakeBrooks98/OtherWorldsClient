@@ -131,7 +131,7 @@ a:active {
 .scroll-btn{
   width:10%;
   display:flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -240,4 +240,17 @@ a:active {
   align-items: center;
   display: flex;
   padding-bottom: 2em;
+}
+
+
+.searchbar-container{
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.searchbar{
+  border-radius: 15px;
+  background-color: white;
+  margin: 5px;
 }
