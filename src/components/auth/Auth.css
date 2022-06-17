@@ -67,3 +67,40 @@ fieldset {
     min-width: 15rem;
     min-height: 5rem;
 }
+
+.login-box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 425px!important;
+  width: 675px!important;
+  color:white;
+  background-color: #33658A;
+  border: 2px solid rgb(10, 59, 47);
+  border-radius: .25rem;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 10px 10px 6px 1px #5d5d5d;
+  
+  }
+
+.login-page{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center!important;
+    justify-content: center!important;
+}
+
+.login-form{
+    background-color: #33658A!important;
+    justify-content: space-between;
+}

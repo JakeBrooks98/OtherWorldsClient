@@ -30,28 +30,31 @@ export const Login = () => {
   }
 
   return (
-    <main >
-      <dialog ref={invalidDialog}>
-        <div>Username or password was not valid.</div>
-        <button onClick={e => invalidDialog.current.close()}>Close</button>
-      </dialog>
-      <section>
-        <form onSubmit={handleLogin}>
-          <fieldset>
-            <label htmlFor="inputUsername"> Username</label>
-            <input ref={username} type="username" id="username" placeholder="Username address" required autoFocus />
-          </fieldset>
-          <fieldset>
-            <label htmlFor="inputPassword"> Password </label>
-            <input ref={password} type="password" id="password" placeholder="Password" required />
-          </fieldset>
-          <fieldset>
-            <button type="submit">Sign In</button>
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <Link to="/register">Not a member yet?</Link>
+    <main className="login-page">
+      <section className="login-box">
+        <h2>Login</h2>
+        <dialog ref={invalidDialog}>
+          <div>Username or password was not valid.</div>
+          <button onClick={e => invalidDialog.current.close()}>Close</button>
+        </dialog>
+        <section className="login-form">
+          <form onSubmit={handleLogin}>
+            <fieldset>
+              <label htmlFor="inputUsername"> Username</label>
+              <input ref={username} type="username" id="username" placeholder="Username address" required autoFocus />
+            </fieldset>
+            <fieldset>
+              <label htmlFor="inputPassword"> Password </label>
+              <input ref={password} type="password" id="password" placeholder="Password" required />
+            </fieldset>
+            <fieldset>
+              <button type="submit">Sign In</button>
+            </fieldset>
+          </form>
+        </section>
+        <section>
+          <Link to="/register">Not a member yet?</Link>
+        </section>
       </section>
     </main>
   )
