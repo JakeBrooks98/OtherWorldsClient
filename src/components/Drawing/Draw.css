@@ -2,7 +2,7 @@
 
   
   .drawing-area {
-    width: 695px;
+    width: 775px;
     height: 600px;
     background-color: lightgrey;
     border: 2px solid #33658A;
@@ -10,6 +10,8 @@
   }
 
   canvas{
-    border: 2px solid black!important;
-    background-color: rgb(191, 162, 125);
+  border: 2px solid black!important;
+  background-image: url(https://st3.depositphotos.com/4337187/32491/i/450/depositphotos_324919226-stock-photo-grunge-background-brown-old-paper.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   }

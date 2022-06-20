@@ -257,11 +257,13 @@ a:active {
 }
 
 .drawn-map{
-  width: 695px;
+  width: 950px;
   height: 600px;
   border: 2px solid black!important;
-  background-color: rgb(191, 162, 125);
-  margin: 15px
+  background-image: url(https://st3.depositphotos.com/4337187/32491/i/450/depositphotos_324919226-stock-photo-grunge-background-brown-old-paper.jpg);
+  margin: 15px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 input{
