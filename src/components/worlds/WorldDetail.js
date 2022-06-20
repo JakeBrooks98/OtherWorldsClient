@@ -7,6 +7,7 @@ import { Timeline } from "../Timeline/Timeline";
 import { EditWorld } from "./EditWorld";
 import { deleteRegion } from "../regions/RegionManager";
 import { DrawMap } from "../Drawing/DrawMap"
+import { BackButton } from "../BackButton";
 
 export const WorldDetail = () => {
     const [world, setWorld] = useState({})
@@ -45,6 +46,7 @@ export const WorldDetail = () => {
         <>
             <Modal worldId={worldToDelete} history={history} setModalStatus={setModalStatus} />
             <section className="detail-page">
+                <BackButton/>
                 <div>
                     <div>
                         {editable ? EditWorld(world, setWorldToUpdate) :
@@ -56,11 +58,15 @@ export const WorldDetail = () => {
                                 </div>
                                 <br />
                                 <div><b>Map:</b></div>
-                                <div className="map">
-                                    {world.is_user ? <DrawMap /> : ""}
-                                    <br />
-                                </div>
-                                {/* {world.map ? <div>{`${world.map}`}</div>: {world.is_user ? <DrawMap /> : ""}} */}
+                                
+                                {world.image?.length > 0 ? <img className="drawn-map" src={`${world.image[0]?.map_image}`} /> : world.is_user ? <DrawMap /> : ""}
+
+                                {editable & world.image ? <button className="delete_button" onClick={
+                                                () => {
+                                                    getSingleWorld(worldId)
+                                                    .then(setWorld)
+                                                }
+                                            }>Delete</button> : ""}
                             </div>
                         }
                     </div>

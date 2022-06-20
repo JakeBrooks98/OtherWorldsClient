@@ -14,7 +14,7 @@ export const NavBar = (props) => {
 
     return (
         <div>
-            <Navbar color="faded" light>
+            <Navbar className="top-Nav" color="faded" light>
                 <NavbarBrand href="/" className="OtherWorlds_brand">OtherWorlds</NavbarBrand>
                 <NavbarToggler onClick={toggleNavbar} className="mr-2" />
                 <Collapse isOpen={!collapsed} navbar>

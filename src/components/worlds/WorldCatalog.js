@@ -54,8 +54,8 @@ export const WorldCatalog = () => {
             <section className="catalog_content">
                 <div className="catalog">
                     {filteredWorlds.map(
-                        (world) => {
-                            if (!(world.id > (startPoint + 4)) && !(world.id < startPoint)) {
+                        (world, index) => {
+                            if (!(index > (startPoint + 3)) && !(index < startPoint)) {
                                 return <div className="world-card" key={world.id} onClick={
                                     () => {
                                         history.push(`/worlds/${world.id}`)
@@ -73,7 +73,7 @@ export const WorldCatalog = () => {
                     <div className="scroll-btn">
                         <button className="catalog-btn" onClick={
                             () => {
-                                setStart(startPoint + 2)
+                                setStart(startPoint + 3)
                                 if (startPoint > worlds.length) {
                                     setStart(0)
                                 }

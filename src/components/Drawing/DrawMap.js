@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react"
+import { SaveMapDrawing } from "./saveDrawing"
 import "./Draw.css"
 
 
@@ -45,12 +46,14 @@ export const DrawMap = () => {
 
     return (
         <>
-        <canvas 
+        <canvas id="canvas"
         onMouseDown={startDrawing}
         onMouseUp={stopDrawing}
         onMouseMove={draw}
         ref={canvasRef}
         />
+
+        <SaveMapDrawing />
 
         </>
     )
