@@ -61,7 +61,7 @@ export const WorldCatalog = () => {
                                         history.push(`/worlds/${world.id}`)
                                     }
                                 }>
-                                    <Link to={`/worlds/${world.id}`}><h3>{`${world.name}`}</h3></Link>
+                                    <Link to={`/worlds/${world.id}`}><h3 className="card-header">{`${world.name}`}</h3></Link>
                                     <p>{`${world.description}`}</p>
                                 </div>
 

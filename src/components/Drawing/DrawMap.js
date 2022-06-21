@@ -3,7 +3,7 @@ import { SaveMapDrawing } from "./saveDrawing"
 import "./Draw.css"
 
 
-export const DrawMap = () => {
+export const DrawMap = ({setWorld}) => {
 
     const canvasRef = useRef(null)
     const contextRef = useRef(null)
@@ -53,7 +53,7 @@ export const DrawMap = () => {
         ref={canvasRef}
         />
 
-        <SaveMapDrawing />
+        <SaveMapDrawing setWorld={setWorld}/>
 
         </>
     )

@@ -16,7 +16,9 @@ textarea {
 
 h1, h2 {
   font-family:"Patua One", serif;
+  font-weight: bold;
   letter-spacing: 2px;
+  padding:5px;
   background-color: #2F4858;
   width:100%;
   text-align: center;
@@ -30,8 +32,6 @@ p {
 
 *{
   font-family: "Roboto Condensed","Roboto","Helvetica","sans-serif";
-  padding-left: 5px;
-  padding-right: 5px;
   font-size: large;
 }
 /*button css*/
@@ -148,7 +148,16 @@ a:active {
   text-align: center;
   margin: 0 10px;
   transition: transform 300ms ease 100ms;
+  color: #33658A;
+  background-color: white;
   overflow: hidden;
+}
+
+.card-header{
+  background-color: #33658A!important;
+  color:white;
+  width: 110%;
+  padding-top: 50px;
 }
 
 .world-card:hover {
@@ -214,7 +223,7 @@ a:active {
   flex-direction: row;
 }
 
-.map{
+.world-map{
   justify-content: center;
   align-items: center;
   display: flex;

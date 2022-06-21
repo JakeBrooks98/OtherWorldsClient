@@ -1,3 +1,4 @@
+
 //create a map
 export const createMap = (map) => {
     return fetch(`http://localhost:8000/maps`, {
