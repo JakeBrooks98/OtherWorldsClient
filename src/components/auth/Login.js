@@ -30,7 +30,7 @@ export const Login = () => {
   }
 
   return (
-    <main className="login-page">
+    <div className="login-page">
       <section className="login-box">
         <h2>Login</h2>
         <dialog ref={invalidDialog}>
@@ -53,9 +53,9 @@ export const Login = () => {
           </form>
         </section>
         <section>
-          <Link to="/register">Not a member yet?</Link>
+          <Link className="register-btn" to="/register">Not a member yet?</Link>
         </section>
       </section>
-    </main>
+    </div>
   )
 }

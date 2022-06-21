@@ -62,7 +62,7 @@ export const WorldCatalog = () => {
                                     }
                                 }>
                                     <Link to={`/worlds/${world.id}`}><h3 className="card-header">{`${world.name}`}</h3></Link>
-                                    <p>{`${world.description}`}</p>
+                                    <p className="card-body">{`${world.description}`}</p>
                                 </div>
 
                             } else {
