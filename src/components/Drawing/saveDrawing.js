@@ -13,7 +13,7 @@ export const SaveMapDrawing = ({setWorld}) => {
 
 
     return (
-        <button onClick={
+        <button className="save-map" onClick={
             () => {
                 canvas = document.getElementById('canvas');
                 dataURL = canvas.toDataURL();

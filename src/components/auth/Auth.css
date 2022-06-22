@@ -44,6 +44,11 @@ fieldset {
     margin:1em;
 }
 
+.sign-in-btn{
+    background-color: #5d5d5d!important;
+    margin-top: 35px;
+}
+
 .container--login {
     text-align: center;
 }
@@ -109,4 +114,8 @@ fieldset{
 
 .register-btn{
     color:white!important
+}
+
+.form-fields{
+    margin-left: 20px;
 }

@@ -30,7 +30,7 @@ export const HomePage = () => {
             </div>
             </div>
             <div className="whats-new">
-                <h3>What's New?</h3>
+                <h3 className="whats-new">What's New?</h3>
                 <div class="whats_new_card" onClick={
                             () => {
                                 history.push(`/worlds/${world.id}`)

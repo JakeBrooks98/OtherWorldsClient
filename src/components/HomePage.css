@@ -1,5 +1,6 @@
 .whats_new_card {
-    margin-top: 40px;
+    margin-top: 35px;
+    margin-left: 15px;
     height: 300px;
     position: relative;
     height: 235px;
@@ -15,17 +16,16 @@
     transform: scale(1.05) !important;
   }
   
+  .whats-new{
+    margin-left: 15px;
+    margin-top: 45px;
+  }
+
   .background {
     display: flex;
     height: 100%;
     background-image: url("https://mmos.com/wp-content/uploads/2021/05/a3-still-alive-blue-moon-forest-banner.jpg");
     background-size: 100% 100%
-  }
-  
-  .left {
-    background: black;
-    width: 30%;
-    position: relative;
   }
   
   .content-container {
@@ -56,6 +56,12 @@
     margin-top: 10px;
     padding-right: 30px;
     padding-left: 30px;
+}
+
+.welcome-message{
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px;
 }
 
 .description{

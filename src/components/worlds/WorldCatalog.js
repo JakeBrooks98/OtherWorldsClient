@@ -71,14 +71,24 @@ export const WorldCatalog = () => {
                         }
                     )}
                     <div className="scroll-btn">
-                        <button className="catalog-btn" onClick={
+                        <button className="right-catalog-btn" onClick={
                             () => {
                                 setStart(startPoint + 3)
                                 if (startPoint > worlds.length) {
                                     setStart(0)
                                 }
                             }
-                        }>></button>
+                        }><i class="arrow right"></i></button>
+                    </div>
+
+                    <div className="left-scroll-btn">
+
+                    {startPoint > 2 ? <button className="left-catalog-btn" onClick={
+                            () => {
+                                setStart(startPoint - 3)
+                                
+                            }
+                        }><i class="arrow left"></i></button>: ""}
 
                     </div>
                 </div>
