@@ -348,24 +348,7 @@ a:active {
   margin:10px;
 }
 
-/* modal css */
-.modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(128, 128, 128, 0.435);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.modal-content {
-  width: 500px;
-  background-color: white;
-
-}
 
 .biomes_checkboxes {
   display: flex;
@@ -451,4 +434,8 @@ a:active {
   border-radius: 15px;
   background-color: white !important;
   margin: 5px;
+}
+
+.create-world-form{
+  margin-left: 20px;
 }
