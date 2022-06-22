@@ -1,0 +1,25 @@
+/* modal css */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #404040 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    font-weight: bold;
+    width: 110%;
+    height: 110%;
+    background-color: white;
+    border:none;
+  }
+
+
+  .modal-btn{
+    margin:3px
+  }

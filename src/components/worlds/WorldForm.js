@@ -26,44 +26,46 @@ export const WorldForm = () => {
     return (
         <form className="worldForm">
             <h2 className="worldForm__name">Create a New World</h2>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="name">World Name: </label>
-                    <input type="text" name="name" required autoFocus className="form-control"
-                        value={currentWorld.name}
-                        placeholder="Please enter your worlds name..."
-                        onChange={changeWorldState}
-                    />
-                </div>
-            </fieldset>
-            <fieldset>
-            <div className="form-group">
-                    <label htmlFor="description">World Description:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        name="description"
-                        className="form-control"
-                        placeholder="Please enter a broad description of your world..."
-                        onChange={changeWorldState} />
-                </div>
-            </fieldset>
+            <div className="create-world-form">
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="name">World Name: </label>
+                        <input type="text" name="name" required autoFocus className="form-control"
+                            value={currentWorld.name}
+                            placeholder="Please enter your worlds name..."
+                            onChange={changeWorldState}
+                        />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="description">World Description:</label>
+                        <input
+                            required autoFocus
+                            type="text"
+                            name="description"
+                            className="form-control"
+                            placeholder="Please enter a broad description of your world..."
+                            onChange={changeWorldState} />
+                    </div>
+                </fieldset>
 
-            <button type="submit"
-                onClick={evt => {
-                    // Prevent form from being submitted
-                    evt.preventDefault()
+                <button type="submit"
+                    onClick={evt => {
+                        // Prevent form from being submitted
+                        evt.preventDefault()
 
-                    const world = {
-                        name: currentWorld.name,
-                        description: currentWorld.description
-                    }
+                        const world = {
+                            name: currentWorld.name,
+                            description: currentWorld.description
+                        }
 
-                    // Send POST request to your API
-                    createWorld(world)
-                        .then(() => history.push("/worldcatalog"))
-                }}
-                className="btn btn-primary">Create</button>
+                        // Send POST request to your API
+                        createWorld(world)
+                            .then(() => history.push("/worldcatalog"))
+                    }}
+                    className="btn btn-primary">Create</button>
+            </div>
         </form>
     )
 }
