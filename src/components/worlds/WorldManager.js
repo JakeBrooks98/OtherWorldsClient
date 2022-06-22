@@ -37,7 +37,7 @@ export const deleteWorld = (worldId) => {
             "Authorization": `Token ${localStorage.getItem("auth_token")}`
      }
     })
-    .then(getAllWorlds)
+    .then(getAllWorlds())
 }
 
 //update a world

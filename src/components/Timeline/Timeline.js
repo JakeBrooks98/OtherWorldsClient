@@ -22,7 +22,7 @@ export const Timeline = (world, editable, setEditable, setWorld) => {
                             getSingleWorld(world.id)
                             .then(setWorld)
                         }
-                        }>Delete</button>: ""}
+                        }><i class="fa-regular fa-trash-can"></i></button>: ""}
                             </>
                         )
                     }

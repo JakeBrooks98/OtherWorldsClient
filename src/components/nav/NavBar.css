@@ -1,3 +1,5 @@
+
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
@@ -47,6 +49,7 @@
 
 .OtherWorlds_brand{
     font-size: larger;
+    font-weight: bold;
     background-color: #242527;
     color: white!important;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -65,5 +68,5 @@
 }
 
 .top-Nav{
-    width: 102%;
+    width: 100%;
 }

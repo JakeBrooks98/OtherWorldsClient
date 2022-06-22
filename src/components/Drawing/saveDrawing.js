@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom'
+import { getSingleWorld } from '../worlds/WorldManager';
 import { createMap } from "./DrawingManager";
 
-export const SaveMapDrawing = () => {
+export const SaveMapDrawing = ({setWorld}) => {
     //get the image data of the canvas to be saved
     let canvas;
     let dataURL;
@@ -12,7 +13,7 @@ export const SaveMapDrawing = () => {
 
 
     return (
-        <button onClick={
+        <button className="save-map" onClick={
             () => {
                 canvas = document.getElementById('canvas');
                 dataURL = canvas.toDataURL();
@@ -21,6 +22,8 @@ export const SaveMapDrawing = () => {
                     world: worldId
                 }
                 createMap(map)
+                .then(() => getSingleWorld(worldId))
+                    .then(setWorld)
             }
         }>Save</button>
     )

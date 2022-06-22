@@ -20,7 +20,7 @@ export const MyWorlds = () => {
         <>
         <section>
             <h1>My Worlds</h1>
-            <div className="catalog">
+            <div className="my-catalog">
                 {worlds.map(
                     (world) => {
                         return <div className="world-card" onClick={
@@ -28,7 +28,7 @@ export const MyWorlds = () => {
                                 history.push(`/worlds/${world.id}`)
                             }
                         }>
-                            <Link to={`/worlds/${world.id}`}><h3>{`${world.name}`}</h3></Link>
+                            <Link to={`/worlds/${world.id}`}><h3 className="card-header">{`${world.name}`}</h3></Link>
                             <p>{`${world.description}`}</p>
                             </div>
                     }

@@ -30,7 +30,7 @@ export const Login = () => {
   }
 
   return (
-    <main className="login-page">
+    <div className="login-page">
       <section className="login-box">
         <h2>Login</h2>
         <dialog ref={invalidDialog}>
@@ -48,14 +48,14 @@ export const Login = () => {
               <input ref={password} type="password" id="password" placeholder="Password" required />
             </fieldset>
             <fieldset>
-              <button type="submit">Sign In</button>
+              <button className="sign-in-btn" type="submit">Sign In</button>
             </fieldset>
           </form>
         </section>
         <section>
-          <Link to="/register">Not a member yet?</Link>
+          <Link className="register-btn" to="/register">Not a member yet?</Link>
         </section>
       </section>
-    </main>
+    </div>
   )
 }

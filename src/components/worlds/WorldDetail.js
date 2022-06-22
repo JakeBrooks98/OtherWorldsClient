@@ -5,9 +5,11 @@ import { editWorld, getSingleWorld } from "./WorldManager";
 import { Modal } from "../modal/Modal";
 import { Timeline } from "../Timeline/Timeline";
 import { EditWorld } from "./EditWorld";
-import { deleteRegion } from "../regions/RegionManager";
 import { DrawMap } from "../Drawing/DrawMap"
 import { BackButton } from "../BackButton";
+import { deleteRegion } from "../regions/RegionManager";
+import { deleteMap } from "../Drawing/DrawingManager";
+
 
 export const WorldDetail = () => {
     const [world, setWorld] = useState({})
@@ -46,27 +48,21 @@ export const WorldDetail = () => {
         <>
             <Modal worldId={worldToDelete} history={history} setModalStatus={setModalStatus} />
             <section className="detail-page">
-                <BackButton/>
+                <BackButton />
                 <div>
                     <div>
-                        {editable ? EditWorld(world, setWorldToUpdate) :
+                        {editable ? EditWorld(world, worldId, setWorldToUpdate, setWorld) :
                             <div>
                                 <h1 className="world-name">{`${world.name}`}</h1>
-                                <div className="world-map"></div>
                                 <div className="world-description">
                                     {`${world.description}`}
                                 </div>
                                 <br />
-                                <div><b>Map:</b></div>
-                                
-                                {world.image?.length > 0 ? <img className="drawn-map" src={`${world.image[0]?.map_image}`} /> : world.is_user ? <DrawMap /> : ""}
+                                <label className="map-label"><b>Map:</b></label>
+                                <div className="world-map">
 
-                                {editable & world.image ? <button className="delete_button" onClick={
-                                                () => {
-                                                    getSingleWorld(worldId)
-                                                    .then(setWorld)
-                                                }
-                                            }>Delete</button> : ""}
+                                {world.image?.length > 0 ? <img className="drawn-map" src={`${world.image[0]?.map_image}`} /> : world.is_user ? <DrawMap setWorld={setWorld} /> : ""}
+                                </div>
                             </div>
                         }
                     </div>
@@ -87,8 +83,10 @@ export const WorldDetail = () => {
                                 return (
                                     <>
                                         <div className="region_with_delete">
-                                            <div className="region-details">
-                                                <h3>{`${region.name}`}</h3>
+                                            <div className="region-card">
+                                                
+                                                <h2 className="region-name">{`${region.name}`}</h2>
+                                                <div className="region-content">
                                                 <div>Biomes: </div><ul>
                                                     {region.biome?.map(
                                                         (biome) => {
@@ -98,16 +96,18 @@ export const WorldDetail = () => {
                                                         }
                                                     )}
                                                 </ul>
-                                                <p>{`${region.description}`}</p>
+                                                <p className="region-description">{`${region.description}`}</p>
+
+                                                </div>
                                             </div>
                                             {editable ? <button className="delete_button" onClick={
                                                 () => {
                                                     deleteRegion(region.id)
                                                     getSingleWorld(worldId)
-                                                    .then(setWorld)
+                                                        .then(setWorld)
                                                 }
-                                            }>Delete</button> : ""}
-
+                                            }><i class="fa-regular fa-trash-can"></i></button> : ""}
+                            
                                         </div>
                                     </>
                                 )
@@ -115,7 +115,7 @@ export const WorldDetail = () => {
                         )}
                     </div>
                     <div className="create_regions">
-                        {world.is_user ? <button onClick={
+                        {world.is_user ? <button className="add-region-btn" onClick={
                             () => {
                                 history.push(`/worlds/${parseInt(worldId)}/addregion`)
                             }
@@ -142,7 +142,7 @@ export const WorldDetail = () => {
                                 .then(() => getSingleWorld(worldId))
                                 .then(setWorld)
                         }}
-                        className="btn btn-primary">Save</button> : <button id="editWorld" onClick={
+                        className="save-btn">Save</button> : <button id="editWorld" onClick={
                             () => {
                                 setEditable(true)
                             }

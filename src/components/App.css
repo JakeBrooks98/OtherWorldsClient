@@ -1,69 +1,91 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import url("https://fonts.googleapis.com/css?family=Alegreya Sans SC");
 
 /*Typography
 --------------------------------------------------------------*/
 body,
 button,
-input,
 select,
 textarea {
   color: #404040;
   font-family: "sans-serif, Comfortaa, Arial";
   font-size: 14px;
   line-height: 1.5;
-  background-color: #86BBD8!important;
+  background-color: #86BBD8 !important;
 }
 
-h1, h2 {
-  font-family:"Patua One", serif;
+input {
+  color: #404040;
+  font-family: "sans-serif, Comfortaa, Arial";
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 10px;
+  background-color: white;
+}
+
+label {
+  padding-right: 10px;
+}
+
+h1,
+h2 {
+  font-family: "Alegreya Sans SC", "Patua One", serif;
+  font-weight: bold;
   letter-spacing: 2px;
+  padding: 5px;
   background-color: #2F4858;
-  width:100%;
+  width: 100%;
   text-align: center;
   -webkit-text-stroke-width: .5px;
-            -webkit-text-stroke-color: white;
+  -webkit-text-stroke-color: white;
 }
 
 p {
   margin-bottom: 1.5em;
 }
 
-*{
-  font-family: "Roboto Condensed","Roboto","Helvetica","sans-serif";
-  padding-left: 5px;
-  padding-right: 5px;
+* {
+  font-family: "Roboto Condensed", "Roboto", "Helvetica", "sans-serif";
   font-size: large;
 }
+
 /*button css*/
-button{
-  font-family: "Roboto Condensed","Roboto",Helvetica,sans-serif;
+button {
+  font-family: "Roboto Condensed", "Roboto", Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 12px!important;
-  text-transform: uppercase!important;
-  padding:.9em;
-  background: #33658A!important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  padding: .9em;
+  background: #33658A !important;
   color: white;
-  border-radius: 8px!important;
+  border-radius: 8px !important;
   margin: .5em;
 }
+
 /*button hover css*/
 button:hover {
-  font-family: "Roboto Condensed","Roboto",Helvetica,sans-serif;
+  font-family: "Roboto Condensed", "Roboto", Helvetica, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
   padding: .9em;
   background-color: #33658A(26, 25, 25);
   color: white;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   transition: 0.5s;
   border-radius: 8px;
 }
 
-.delete_button{
-  background-color: rgb(160, 21, 21)!important;
+.delete_button {
+  background-color: rgb(160, 21, 21) !important;
+  margin:5px;
+  margin-bottom: 15px;
 }
 
+.save-btn{
+  margin:5px;
+  margin-bottom: 15px;
+}
 
 /* unvisited link */
 a:link {
@@ -79,7 +101,7 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-  color: white!important;
+  color: white !important;
   text-decoration: underline;
 }
 
@@ -89,33 +111,45 @@ a:active {
   text-decoration: none;
 }
 
-.back-btn{
+.back-btn {
   justify-content: space-around;
   margin: 0.5em;
 }
 
-.next-button{
+.next-button {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.catalog{
-    display: flex;
+/* catalog */
+.catalog {
+  display: flex;
+  width: 90vw;
+  justify-content: space-evenly;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.catalog-btn{
-  width: 10%;
-  background-color: #404040!important;
-  opacity: .4!important;
-  padding-top: 50%;
-  padding-bottom: 50%;
-  margin-left: 30px;
-  float: right;
+.catalog_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.catalog-btn:hover{
+.my-catalog{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.catalog-btn:hover {
   border-radius: 15px;
   padding-top: 30%;
   padding-bottom: 30%;
@@ -125,65 +159,196 @@ a:active {
   transform: translateX(-25%);
 }
 
-.world-card:hover ~ .world-card {
+.world-card:hover~.world-card {
   transform: translateX(25%);
 }
 
-.scroll-btn{
-  width:10%;
-  display:flex;
+/* catalog buttons */
+.scroll-btn {
+  width: 10%;
+  display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: fixed;
+  right: 25px;
+  top: 325px
 }
 
-.world-card{
-  height: 425px!important;
-  width: 395px!important;
-  border: 2px solid rgb(10, 59, 47);
-  border-radius: .25rem;
-  padding: 1rem;
+.right-catalog-btn {
+  width: 10%;
+  background-color: #404040 !important;
+  opacity: .4 !important;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-left: 30px;
+  float: right;
+}
+
+.right-catalog-btn:hover {
+  width: 10%;
+  background-color: #383838 !important;
+  opacity: .5!important;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-left: 30px;
+  float: right;
+}
+
+.left-scroll-btn {
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: fixed;
+  left: 25px;
+  top: 325px
+}
+
+.left-catalog-btn {
+  width: 10%;
+  background-color: #404040 !important;
+  opacity: .4 !important;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-left: 30px;
+  float: left;
+}
+
+.left-catalog-btn:hover {
+  width: 10%;
+  background-color: #383838 !important;
+  opacity: .5!important;
+  padding-top: 50%;
+  padding-bottom: 50%;
+  margin-left: 30px;
+  float: left;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+/* world cards */
+.world-card {
+  height: 425px !important;
+  width: 395px !important;
+  border: 3px solid #0f3551 !important;
+  border-radius: .65rem;
   margin: 1rem;
   box-shadow: 10px 10px 6px 1px #5d5d5d;
   flex: 0 0 19.7%;
   text-align: center;
   margin: 0 10px;
   transition: transform 300ms ease 100ms;
+  color: #33658A;
+  background-color: white;
   overflow: hidden;
+}
+
+.world-description{
+  justify-content: center;
+  text-align: center;
+}
+
+.card-header {
+  background-color: #33658A !important;
+  color: white;
+  width: 110%;
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  height: 30%;
+  width: 100%;
+  border-bottom: 3px solid #0f3551 !important;
+
+}
+
+.card-body {
+  padding: 15px 7px !important;
 }
 
 .world-card:hover {
   transform: scale(1.2) !important;
 }
 
-.card-section{
-  display:flex;
+.card-section {
+  display: flex;
   flex-wrap: wrap;
 }
 
-.world-regions{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+/* world region css */
+.world-regions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-.region-details{
-    height: 300px;
-    width:250px;
-    border: 2px solid rgb(10, 59, 47);
-    border-radius: .25rem;
-    padding: 1rem;
-    margin: 1rem;
-    box-shadow: 10px 10px 6px 1px #5d5d5d;
-    transition: box-shadow 0.25s ease;
-    overflow: hidden;
-    
+.region-card {
+  height: 350px !important;
+  width: 290px !important;
+  border: 3px solid #0f3551 !important;
+  border-radius: .65rem;
+  margin: 1rem;
+  box-shadow: 10px 10px 6px 1px #5d5d5d;
+  flex: 0 0 19.7%;
+  text-align: center;
+  margin: 0 10px;
+  transition: transform 300ms ease 100ms;
+  color: #33658A;
+  background-color: white;
+  overflow: hidden;
+  padding-bottom: 5px;
 }
 
-.region_with_delete{
+.region-content {
+  padding: 15px 7px !important;
+}
+
+.region-name {
+  background-color: #33658A !important;
+  color: white;
+  width: 110%;
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 30%;
+  width: 100%;
+  border-bottom: 3px solid #0f3551 !important;
+}
+
+.region_with_delete {
   flex-direction: column;
   align-content: center;
 }
 
+.create_regions {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-bottom: 2em;
+}
+.add-region-btn{
+  margin:10px;
+}
+
+/* modal css */
 .modal {
   position: fixed;
   left: 0;
@@ -199,22 +364,25 @@ a:active {
 .modal-content {
   width: 500px;
   background-color: white;
-  
+
 }
 
-.biomes_checkboxes{
+.biomes_checkboxes {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 
-.catalog_content{
-  flex-wrap: wrap;
-  flex-direction: row;
+
+/* world map */
+.map-label{
+  padding-left: 25px;
+  font-weight: bold;
+  font-size: larger;
 }
 
-.map{
+.world-map {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -222,48 +390,65 @@ a:active {
   padding-top: 2em;
 }
 
-.create_regions{
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  padding-bottom: 2em;
-}
-
-.create-event{
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  padding-bottom: 2em;
-}
-
-.edit_delete_buttons{
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  padding-bottom: 2em;
-}
-
-
-.searchbar-container{
+.map_delete_button {
   display:flex;
+  justify-content: center;
+  align-items:center;
+  background-color: rgb(160, 21, 21) !important;
+  margin:5px;
+  margin-bottom: 15px;
+  width: 40px;
+  height:10px
+}
+.save-map{
+  margin:5px;
+}
+
+.drawn-map {
+  width: 950px;
+  height: 600px;
+  border: 2px solid black !important;
+  background-image: url(https://st3.depositphotos.com/4337187/32491/i/450/depositphotos_324919226-stock-photo-grunge-background-brown-old-paper.jpg);
+  margin: 15px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.map-with-delete{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+.create-event {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-bottom: 2em;
+}
+
+.edit_delete_buttons {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-bottom: 2em;
+}
+
+#editWorld{
+  margin:5px 5px 15px;
+}
+
+/* search bar */
+.searchbar-container {
+  display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-.searchbar{
+.searchbar {
   border-radius: 15px;
-  background-color: white!important;
+  background-color: white !important;
   margin: 5px;
-}
-
-.drawn-map{
-  width: 695px;
-  height: 600px;
-  border: 2px solid black!important;
-  background-color: rgb(191, 162, 125);
-  margin: 15px
-}
-
-input{
-  background-color: white!important;
 }

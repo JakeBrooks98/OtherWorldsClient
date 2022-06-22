@@ -61,8 +61,8 @@ export const WorldCatalog = () => {
                                         history.push(`/worlds/${world.id}`)
                                     }
                                 }>
-                                    <Link to={`/worlds/${world.id}`}><h3>{`${world.name}`}</h3></Link>
-                                    <p>{`${world.description}`}</p>
+                                    <Link to={`/worlds/${world.id}`}><h3 className="card-header">{`${world.name}`}</h3></Link>
+                                    <p className="card-body">{`${world.description}`}</p>
                                 </div>
 
                             } else {
@@ -71,14 +71,24 @@ export const WorldCatalog = () => {
                         }
                     )}
                     <div className="scroll-btn">
-                        <button className="catalog-btn" onClick={
+                        <button className="right-catalog-btn" onClick={
                             () => {
                                 setStart(startPoint + 3)
                                 if (startPoint > worlds.length) {
                                     setStart(0)
                                 }
                             }
-                        }>></button>
+                        }><i class="arrow right"></i></button>
+                    </div>
+
+                    <div className="left-scroll-btn">
+
+                    {startPoint > 2 ? <button className="left-catalog-btn" onClick={
+                            () => {
+                                setStart(startPoint - 3)
+                                
+                            }
+                        }><i class="arrow left"></i></button>: ""}
 
                     </div>
                 </div>
