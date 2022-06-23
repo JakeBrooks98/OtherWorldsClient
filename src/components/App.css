@@ -270,6 +270,7 @@ a:active {
   padding-top: 50px;
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 30%;
   width: 100%;
   border-bottom: 3px solid #0f3551 !important;
@@ -299,8 +300,8 @@ a:active {
 }
 
 .region-card {
-  height: 350px !important;
-  width: 290px !important;
+  height: 425px !important;
+  width: 315px !important;
   border: 3px solid #0f3551 !important;
   border-radius: .65rem;
   margin: 1rem;
