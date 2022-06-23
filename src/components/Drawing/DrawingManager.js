@@ -2,7 +2,7 @@
 
 //create a map
 export const createMap = (map) => {
-    return fetch(`http://localhost:8000/maps`, {
+    return fetch(`https://other-worlds-server.herokuapp.com/maps`, {
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -13,7 +13,7 @@ export const createMap = (map) => {
 }
 
 export const deleteMap = (mapId) => {
-    return fetch(`http://localhost:8000/maps/${mapId}`, {
+    return fetch(`https://other-worlds-server.herokuapp.com/maps/${mapId}`, {
         method: "DELETE",
         headers:{
             "Content-Type": "application/json",

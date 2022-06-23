@@ -1,7 +1,7 @@
 
 //create an event
 export const createEvent = (event) => {
-    return fetch(`http://localhost:8000/events`, {
+    return fetch(`https://other-worlds-server.herokuapp.com/events`, {
         method: "POST",
         headers:{
             "Content-Type": "application/json",
@@ -12,7 +12,7 @@ export const createEvent = (event) => {
 }
 
 export const deleteEvent = (eventId) => {
-    return fetch(`http://localhost:8000/events/${eventId}`, {
+    return fetch(`https://other-worlds-server.herokuapp.com/events/${eventId}`, {
         method: "DELETE",
         headers:{
             "Content-Type": "application/json",
