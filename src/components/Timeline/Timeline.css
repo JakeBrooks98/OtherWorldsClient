@@ -34,7 +34,8 @@
   flex-direction: column;
   gap: 3px;
   background-color: #33658A!important;
-  color:white
+  color:white;
+  padding-left:8px;
 }
 
 .event_content{
