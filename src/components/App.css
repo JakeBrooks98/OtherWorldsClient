@@ -300,8 +300,8 @@ a:active {
 }
 
 .region-card {
-  height: 425px !important;
-  width: 315px !important;
+  height: 550px !important;
+  width: 415px !important;
   border: 3px solid #0f3551 !important;
   border-radius: .65rem;
   margin: 1rem;
